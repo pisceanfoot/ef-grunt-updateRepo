@@ -36,7 +36,7 @@ module.exports = function(grunt){
 		                  stdout: true,
 		                  execOptions: {
 		                    cwd: selectRepo.path,
-		                    maxBuffer: 1024*1024
+		                    maxBuffer: 0
 		                  }
 		              },
 		              command: function(){
