@@ -53,12 +53,12 @@ module.exports = function(grunt){
 
       var taskName = sysPath.basename(selectRepo.path);
 
-      gruntConfig.gitcheckout['task_' + taskName]= templateConfig.gitcheckout.specific;
-      gruntConfig.shell['task_' + taskName] = templateConfig.shell.specific;
+      gruntConfig.gitcheckout['task_' + selectRepo.project  + '_' + taskName]= templateConfig.gitcheckout.specific;
+      gruntConfig.shell['task_' + selectRepo.project  + '_' + taskName] = templateConfig.shell.specific;
       
       grunt.config.merge(gruntConfig);
 
-      grunt.task.run('gitcheckout:task_' + taskName, 'shell:task_' + taskName);
+      grunt.task.run('gitcheckout:task_' + selectRepo.project  + '_' + taskName, 'shell:task_' + selectRepo.project  + '_' + taskName);
     }
   });
 };

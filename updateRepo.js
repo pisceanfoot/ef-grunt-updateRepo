@@ -58,13 +58,13 @@ module.exports = function(grunt){
       		}
 
       		var taskName = sysPath.basename(selectRepo.path);
-      		gruntConfig.gitpull['task_' + taskName]= templateConfig.gitpull.specific;
-      		gruntConfig.shell['task_' + taskName]= templateConfig.shell.specific;
+      		gruntConfig.gitpull['task_' + selectRepo.project  + '_' + taskName]= templateConfig.gitpull.specific;
+      		gruntConfig.shell['task_' + selectRepo.project  + '_' + taskName]= templateConfig.shell.specific;
       		grunt.config.merge(gruntConfig);
 
-      		grunt.task.run('gitpull:task_' + taskName);
+      		grunt.task.run('gitpull:task_' + selectRepo.project  + '_' + taskName);
 
-      		grunt.task.registerTask('build:task_' + taskName, function(){
+      		grunt.task.registerTask('build:task_' + selectRepo.project  + '_' + taskName, function(){
       			var currentTaskName = this.name.substring(6);
       			this.requires('gitpull:' + currentTaskName);
 
@@ -77,7 +77,7 @@ module.exports = function(grunt){
       				console.log(colors.yellow.bold("nothing to build, exit..."));
       			}
       		});
-      		grunt.task.run('build:task_' + taskName);
+      		grunt.task.run('build:task_' + selectRepo.project  + '_' + taskName);
 		}
     });
 };

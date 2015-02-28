@@ -2,14 +2,13 @@ module.exports = {
 	checkRepo: {
 			'Database' : [],
 			'Frameworks' : [],
-			'labs-commerce' : [],
+			'labs-commerce' : ['commerce', 'customerservice'],
 			'labs-mobile' : [],
 			'labs-ops' : [],
-			'labs-school' : ['school'],
-			'labs-share' : [{'service-clients': {}}, 
-							'partners-portal'],
-			'labs-solution' : [],
-			'labs-specialdeal' : ['rio2016languagetest', /*'login-handler', 'russ-ui-headerfooter'*/]
+			'labs-school' : ['school', 'school-ui-activity'],
+			'labs-share' : ['service-clients', 'partners-portal', 'enrollment', 'queue-processor', 'ui-shared-dist'],
+			'labs-solution' : ['community', 'et-ui-headerfooter'],
+						'labs-specialdeal': ['rio2016languagetest']
 		},
 	updateRepo:{
 		'labs-share' : ['service-clients', 'shared-services'/*, 
