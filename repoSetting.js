@@ -5,7 +5,7 @@ module.exports = {
 			'labs-commerce' : [],
 			'labs-mobile' : [],
 			'labs-ops' : [],
-			'labs-school' : [],
+			'labs-school' : ['school'],
 			'labs-share' : [{'service-clients': {}}, 
 							'partners-portal'],
 			'labs-solution' : [],

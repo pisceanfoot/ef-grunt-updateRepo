@@ -19,6 +19,7 @@ module.exports = function(grunt){
 		              cwd: selectRepo.path,
 		              branch: (selectRepo.options && selectRepo.options.branch) || 'develop',
 		              consoleCallback: function (err, result) {
+					  
 		              	if(result.stdout == 'Already up-to-date.'){
 		              		console.log(colors.yellow.bold(result.stdout));
 		              		return;
@@ -36,7 +37,7 @@ module.exports = function(grunt){
 		                  stdout: true,
 		                  execOptions: {
 		                    cwd: selectRepo.path,
-		                    maxBuffer: 0
+		                    maxBuffer: 1024*2024
 		                  }
 		              },
 		              command: function(){
